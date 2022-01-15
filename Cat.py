@@ -87,7 +87,7 @@ class Cat:
             self.setAge(self.getAge() + 1)
 
     def getNames(self):
-        """
+        """ 
         Returns a list of all the names that this cat previously had
         """
         return self.__previousNames

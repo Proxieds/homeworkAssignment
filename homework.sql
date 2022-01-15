@@ -1,3 +1,5 @@
+-- SQL TASKS
+
 -- CREATE TABLE STATEMENTS
 
 CREATE TABLE IF NOT EXISTS Cat (
@@ -18,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Dog (
 	timesSpoken INTEGER
 );
 
--- INSERT STATEMENTS 
+-- SAMPLE INSERT STATEMENT 
 
 -- begin transaction
 BEGIN;
@@ -28,6 +30,6 @@ VALUES
 
 INSERT INTO Dog(name, age, favoriteFood, previousNames, timesSpoken)
 VALUES 
-('Odie', 42, 'Anything', '{"Odie"}', 170);
+('Odie', 42, 'Anything', '{"Odie, "ScoobyDoo"}', 170);
 -- commit the changes
 COMMIT;

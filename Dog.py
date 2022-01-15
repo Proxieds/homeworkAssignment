@@ -7,7 +7,11 @@ class Dog(Cat):
     """
 
     def __init__(self, *args, **kwargs):
-        # Calls parent class __init__ method
+        """
+        initialization
+            Calls the parent class's initialization function
+            Inherits methods and attributes from the Cat class 
+        """
         super(Dog, self).__init__(*args, **kwargs)
 
     def speak(self, optionalMessage=None):

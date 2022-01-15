@@ -3,11 +3,11 @@ from Dog import Dog
 from Data import Data
 
 
-def main():
+def testPart1():
     """
-    main process goes here
+    Tests the first part of the takehome assignment
+    Create a new cat object, set name to Garfield and insert into Cat table
     """
-    print("Part 1: ")
     cat = Cat()
     print("Name is currently %s" % cat.getName())
     cat.setName("Garfield")
@@ -16,7 +16,13 @@ def main():
     data = Data("database")
     data.insert("Cat", cat)
 
-    print("Part 2: Informal Tests for Additional Functionality: ")
+
+def testPart2():
+    """
+    Tests additional features added onto the base object class
+    Tests a variety of methods and expected behaviors informally.
+    """
+    cat = Cat("Garfield")
     print("First cat's age: %d" % cat.getAge())
     secondCat = Cat("Grumpy Cat")
     print("Second cat with initial name: %s" % secondCat.getName())
@@ -40,11 +46,22 @@ def main():
 
     print("Creating Dog Object: ")
     dog = Dog("Odie")
+    print("Dog's name: %s" % dog.getName())
     for _ in range(5):
         dog.speak()
         print("Number of Speaks: %d Age: %d" %
               (dog.getNumberOfSpeaks(), dog.getAge()))
-    print("Testing the set/get names function: ")
+
+
+def main():
+    """
+    main process goes here
+    """
+    print("Part 1: ")
+    testPart1()
+
+    print("Part 2: Informal Tests for Additional Functionality: ")
+    testPart2()
 
 
 if __name__ == "__main__":
