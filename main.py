@@ -47,10 +47,6 @@ def testPart2():
     print("Creating Dog Object: ")
     dog = Dog("Odie")
     print("Dog's name: %s" % dog.getName())
-    for _ in range(5):
-        dog.speak()
-        print("Number of Speaks: %d Age: %d" %
-              (dog.getNumberOfSpeaks(), dog.getAge()))
 
 
 def main():

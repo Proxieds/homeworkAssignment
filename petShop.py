@@ -5,7 +5,10 @@ from Data import Data
 import time
 
 
-def saveTest(verbose=True):
+def saveTest():
+    """
+    Creates a cat/dog with name and insert it into the database.
+    """
     data = Data("database")
     # Begin Transaction
     data.beginTran()
@@ -17,7 +20,11 @@ def saveTest(verbose=True):
     data.commit()
 
 
-def savePetShop(verbose=True):
+def savePetShop():
+    """
+    Creates 3 nameless cats and dogs and performs an insert into the database that persists through transactions.
+    Also shows an example where a rollback would be needed and reverts all other changes made after the transaction started and returns.
+    """
     data = Data("database")
     # Begin Transaction
     data.beginTran()
@@ -49,6 +56,9 @@ def savePetShop(verbose=True):
 
 
 def logStats():
+    """
+    Logs stats about the above functions like execution time.
+    """
     start_time = time.time()
     saveTest()
     print("--- SaveTest() Runtime:  %s seconds ---" %
