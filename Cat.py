@@ -1,4 +1,4 @@
-# Import random for use within assigning random ages to the cat
+# Import random for use within assigning random ages on initialization
 import random
 
 

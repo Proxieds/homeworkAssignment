@@ -1,7 +1,7 @@
 from Cat import Cat
 from Dog import Dog
 from Data import Data
-# Time library is used in the logstats method
+# Time library is used in the logStats() method for execution time
 import time
 
 
