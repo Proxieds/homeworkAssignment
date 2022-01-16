@@ -42,9 +42,11 @@ def savePetShop():
         namelessCat = Cat()
         namelessDog = Dog()
         try:
-            # Checks that the objects have a name prior to making the insertion
-            assert(namelessCat.getName() is not " ")
+            # Checks that cat has a name prior to insertion
+            assert(namelessCat.getName())
             data.insert("Cat", namelessCat)
+            # Checks that dog has a name prior to insertion
+            assert(namelessDog.getName())
             data.insert("Dog", namelessDog)
         except:
             # Rollsback the database when an insertion fails
@@ -74,13 +76,8 @@ def main():
     """
     main process goes here
     """
-    print("Save Test: ")
-    saveTest()
 
-    print("Save Petshop: ")
-    savePetShop()
-
-    print("Log Stats: ")
+    print("Testing Save Functions: ")
     logStats()
 
 

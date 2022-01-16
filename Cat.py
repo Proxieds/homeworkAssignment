@@ -7,22 +7,22 @@ class Cat:
     Cat object definition
     """
 
-    def __init__(self, name=" ", age=None, favoriteFood=None):
+    def __init__(self, name=None, age=None, favoriteFood=None):
         """
         initialization
           name             : name of cat
           age              : count of symbol
           favoriteFood     : the cat's favorite food
-          previousNames    : list of all the names that the cat has previously had
+          previousNames    : set of all the names that the cat has previously had
           numberOfSpeaks   : Counter for all the times that this cat has spoken
         """
         # Optional name for cat can be specified in construction, default is None otherwise
-        self.__name = name
+        self.__name = name or ""
         # Adding 1 to stop value as stop value is not inclusive in range i.e [5,10)
         self.__age = random.randrange(start=5, stop=11)
         self.__favoriteFood = favoriteFood
         # Initializes previous names collection with the name from construction if an optional name is given
-        self.__previousNames = [self.__name] if self.__name is not " " else []
+        self.__previousNames = {self.__name} if self.__name else set()
         self.__numberOfSpeaks = 0
 
     def getName(self):
@@ -51,12 +51,14 @@ class Cat:
 
     def setName(self, name):
         """
-        Sets the name of the cat and adds the name to the list of previous names 
+        Sets the name of the cat and adds the name to the set of previous names 
+        Base condition is that the name is not empty or "None", otherwise update the 
         """
-        self.__name = name
-        # Check if name is not none and doesn't already exist in the collection of previous names to avoid duplicate names
-        if self.__name is not " " and self.__name not in self.__previousNames:
-            self.__previousNames.append(self.__name)
+        # Check that a valid name is provided
+        if name:
+            self.__name = name
+            # Don't have to check for duplicates names prior to adding to the collection when using a set
+            self.__previousNames.add(self.getName())
 
     def setAge(self, age):
         """
@@ -88,7 +90,7 @@ class Cat:
 
     def getNames(self):
         """ 
-        Returns a list of all the names that this cat previously had
+        Returns a collection of all the names that this cat previously had
         """
         return self.__previousNames
 

@@ -36,11 +36,11 @@ def testPart2():
         print("Number of Speaks: %d Age: %d" %
               (cat.getNumberOfSpeaks(), cat.getAge()))
     print("Testing the set/get names function: ")
-    print("List of names for first cat")
+    print("Set of names for first cat")
     print(cat.getNames())
     print("Setting cat's name to Spunky")
     cat.setName("Spunky")
-    print("List of names for first cat")
+    print("Set of names for first cat")
     print(cat.getNames())
     print("Average Name Length for cat: %.2f" % cat.getAverageNameLength())
 
