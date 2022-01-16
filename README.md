@@ -16,7 +16,8 @@ Run Instructions
 ## Implementations
 - Added getters/setters for most class attributes.
 - If a cat/dog object was constructed with an initial name, it would be added to the previousNames collection on __init__.
-- setName() will only add the new name to the collection of previous names if it is not blank and doesn't already exist in the collection.
+- setName() will only set and add the new name to the collection of previous names if it is not None or empty character.
+- Chose to use sets instead of list for tracking previous names as it handles duplicate names and didn't require manually check for membership like with a list.
 - Decided to have the Dog class inherits attributes and methods from Cat class and only other change done was overriding default speak from "meow" to "woof" since they had fairly similar attributes and implementions otherwise.
 - Keep tracked of every fifth speak of an animal by having an additional attribute and incrementing the age by one every time the total number of speaks was divisible evenly by 5, i.e: (% 5).
 - GetAverageNameLength() is got the float length of all names within the previous names and divided by the count of previous names, the reason why I used float for getting the sum of letters since otherwise it would result in integer division and loss of precision.
@@ -30,6 +31,7 @@ Run Instructions
 ## Any Requirement disagreements or things I would do differently
 - Was not sure if we had to make a .rb file for the petShop portion of the assignment or stick with the current translated files.
 - Have cat and dog objects inherit from an Animal parent class, and store type of animal within an Animal table instead of a Cat/Dog table.
+- I did not implement the cat/dog object like above as it would have changed the provided code too much.
 - More clarification on the logStats() method.
 - Otherwise I thought the requirements were good and to the point. 
 
